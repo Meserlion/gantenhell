@@ -1,5 +1,11 @@
-﻿{
+{
   "last_post_id": 4089,
-  "processed_slugs": [],
-  "_note": "Initialized — all pre-existing posts treated as already handled"
+  "processed_slugs": [
+    "copenhell-celebrates-15-years-in-hell-with-new-festival-song-and-major-all-star-show",
+    "saxon-added-to-the-copenhell-lineup",
+    "copenhell-is-sold-out",
+    "full-line-up-for-copenhell-metal-cruise-2026",
+    "gatecreeper-replaces-static-x"
+  ],
+  "last_checked": "2026-05-25T14:11:45.670083+00:00"
 }
