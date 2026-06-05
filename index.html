@@ -257,6 +257,7 @@
   </div>
   <div class="hdr-right">
     <div class="pill">📅 Jun 24–27, 2026</div>
+    <div class="pill" id="countdown-pill">⏳ ...</div>
     <div class="pill">📍 Refshaleøen, CPH</div>
     <button class="view-toggle" id="view-btn" onclick="toggleView()">☰ List</button>
   </div>
@@ -793,6 +794,23 @@ setInterval(()=>{updateNowTicker();if(isFestivalNow()){renderRuler();}},30000);
 
 setTimeout(updateMetalMeter, 100); // after first render settles
 setInterval(updateMetalMeter, 60000); // update every minute
+
+// ── COUNTDOWN ──
+(function updateCountdown() {
+  const pill = document.getElementById('countdown-pill');
+  if (!pill) return;
+  const now = new Date();
+  const fest = new Date('2026-06-24T00:00:00+02:00');
+  const end  = new Date('2026-06-27T23:59:59+02:00');
+  if (now >= end) { pill.textContent = '🤘 See you next year'; return; }
+  if (now >= fest) { pill.textContent = '🔥 IT\'S HAPPENING'; return; }
+  const diff = fest - now;
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  pill.textContent = `⏳ ${d}d ${h}h ${m}m`;
+  setTimeout(updateCountdown, 30000);
+})();
 </script>
 </body>
-</html>
+</html>
