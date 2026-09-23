@@ -1,8 +1,9 @@
 name: Schedule Check & Auto-Update
 
 on:
-  schedule:
-    - cron: '0 8 * * *'
+  # Hibernating until Copenhell 2027 — re-enable the cron below once the new lineup drops.
+  # schedule:
+  #   - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
